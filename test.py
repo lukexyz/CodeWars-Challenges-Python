@@ -53,7 +53,7 @@ class Test(object):
         self.failures += 1
 
     def _success(self, actual):
-        print("Test Passed: " + actual + " ✓")
+        print("Test Passed: " + str(actual) + " ✓")
         self.successes += 1
 
     def report(self):

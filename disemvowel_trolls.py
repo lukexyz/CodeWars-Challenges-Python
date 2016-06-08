@@ -12,14 +12,9 @@ For example, the string "This website is for losers LOL!" would become "Ths wbst
 '''
 
 
-# First attempt
+# Refined solution
 def disemvowel(string):
     return ''.join([letter for letter in string if letter.lower() not in 'aeiou'])
-
-
-# Refining soltion
-def disemvowel2(s):
-    return s.translate("aeiouAEIOU")
 
 
 test = Test()
