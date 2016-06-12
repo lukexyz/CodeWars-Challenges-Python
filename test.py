@@ -2,6 +2,7 @@ import sys
 import atexit
 from datetime import datetime
 
+
 class Test(object):
     """
     Implements the test interface as described here:
@@ -25,15 +26,15 @@ class Test(object):
 
     def _assert(self, p, actual, expected, msg):
         if not p(expected, actual):
-            self._error(msg, expected, actual)
+            self._error(msg, actual, expected)
         else:
             self._success(actual)
 
-    def assert_equals(self, actual, expected, msg="{} should be {}"):
+    def assert_equals(self, actual, expected, msg="{} should equal {}"):
         eq = lambda a, b: a == b
         self._assert(eq, actual, expected, msg)
 
-    def assert_not_equals(self, actual, unexpected, msg="{} should be {}"):
+    def assert_not_equals(self, actual, unexpected, msg="{} should equal {}"):
         neq = lambda a, b: a != b
         self._assert(neq, actual, unexpected, msg)
 
@@ -69,6 +70,7 @@ class Test(object):
             print("Happy Days!")
         else:
             print("Better luck next time!")
+
 
 # test = Test()
 # atexit.register(test.report)
